@@ -42,14 +42,15 @@ for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):
         print(new[0]+".png")
         os.rename(old , new[0]+'.png')
   
-#zad7
+# #zad7
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
 
 delete = ["się", " i ", "nigdy", "dlaczego"]
-with open(infile, encoding="utf-8") as fin, open(outfile, "w+", encoding="utf-8") as fout:
+
+with open(infile) as fin, open(outfile, "w+") as fout:
 for line in fin:
 for word in delete:
 line = line.replace(word, "")
@@ -64,12 +65,11 @@ outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
 
 replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "dlaczego":"czemu"}
 
-with open(infile, encoding="utf-8") as fin, open(outfile, "w+", encoding="utf-8") as fout:
+with open(infile) as fin, open(outfile, "w+") as fout:
 for line in fin:
 for key in replaceDict.keys():
 line = line.replace(key, replaceDict[key])
 fout.write(line)
-
   
   
 #zad9
@@ -155,7 +155,6 @@ class Complex(object):
     def __init__(self, real, imag=0.0):
         self.real = real
         self.imag = imag
-        # Formats our results
         print(self.real + self.imag)
   
     def __add__(self, other):
@@ -185,10 +184,9 @@ class Complex(object):
  
 #zad 15
 while True:
-    # Take input from the user
+    
     choice = str(input("Enter choice(1/2/3/4): "))
  
-    # Check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
          
         real1 = float(input("Enter first real number: "))
@@ -219,7 +217,7 @@ while True:
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')  
 import xml.etree.ElementTree as xml
-students=[{'name':'Jarek','age':21,'marks':50},{'name':'Michal','age':22,'marks':60}]
+students=[{'name':'Jarek','age':23,'marks':50},{'name':'Michal','age':24,'marks':60}]
 root = xml.Element("students")
 for student in students:
     child=xml.Element("student")
@@ -247,7 +245,7 @@ with open("myfile_modified.xml", "wb") as fh:
   
 #zad16
 import os
-os.chdir(# #zad7
+os.chdir(
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
