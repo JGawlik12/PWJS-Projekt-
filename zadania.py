@@ -60,14 +60,14 @@ for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):
   
   
   
-# #zad7
+#zad7
 
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
 
-delete = ["się", " i ", "nigdy", "dlaczego"]
+delete = ["się", " i ", "nigdy", "Nigdy", "dlaczego", "Dlaczego"]
 with open(infile) as fin, open(outfile, "w+") as fout:
     for line in fin:
         for word in delete:
@@ -83,7 +83,7 @@ os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
 
-replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "dlaczego":"czemu"}
+replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "Nigdy":"Prawie nigdy", "dlaczego":"czemu", "Dlaczego":"Czemu"}
 
 with open(infile) as fin, open(outfile, "w+") as fout:
     for line in fin:
