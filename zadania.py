@@ -68,12 +68,11 @@ infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
 
 delete = ["się", " i ", "nigdy", "dlaczego"]
-
 with open(infile) as fin, open(outfile, "w+") as fout:
-for line in fin:
-for word in delete:
-line = line.replace(word, "")
-fout.write(line)
+    for line in fin:
+        for word in delete:
+            line = line.replace(word, "")
+        fout.write(line)
 
 
 
@@ -87,10 +86,10 @@ outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
 replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "dlaczego":"czemu"}
 
 with open(infile) as fin, open(outfile, "w+") as fout:
-for line in fin:
-for key in replaceDict.keys():
-line = line.replace(key, replaceDict[key])
-fout.write(line)
+    for line in fin:
+        for key in replaceDict.keys():
+            line = line.replace(key, replaceDict[key])
+        fout.write(line)
   
   
   
