@@ -65,7 +65,7 @@ for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
-outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
+outfile = os.path.join(os.getcwd()) + '\\' + "wynik_zadania_7.txt"
 
 delete = ["się", " i ", "nigdy", "Nigdy", "dlaczego", "Dlaczego"]
 with open(infile) as fin, open(outfile, "w+") as fout:
@@ -81,7 +81,7 @@ with open(infile) as fin, open(outfile, "w+") as fout:
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
-outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
+outfile = os.path.join(os.getcwd()) + '\\' + "wynik_zadania_8.txt"
 
 replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "Nigdy":"Prawie nigdy", "dlaczego":"czemu", "Dlaczego":"Czemu"}
 
