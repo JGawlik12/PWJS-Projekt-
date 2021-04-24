@@ -183,8 +183,6 @@ for r in L3:
 
 #zad14   
 
-#WYZNACZNIK MACIERZY
-
 import random as rd
 import numpy as np
 
@@ -281,7 +279,7 @@ while True:
 import os
 os.chdir(r'C:\Users\Jarek\Documents\Python')  
 import xml.etree.ElementTree as xml
-students=[{'name':'Jarek','age':23,'marks':50},{'name':'Michal','age':24,'marks':60}]
+students=[{'name':'Jarek','age':21,'marks':50},{'name':'Michal','age':22,'marks':60}]
 root = xml.Element("students")
 for student in students:
     child=xml.Element("student")
@@ -360,7 +358,8 @@ plt.title(r'Histogram of IQ: $\mu=100$, $\sigma=15$')
 
 plt.subplots_adjust(left=0.15)
 plt.show()
-   
+  
+  
   
 #zad20
 
