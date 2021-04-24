@@ -19,22 +19,22 @@ else:
 #zad4
 import os
  
-dir = r"C:\Users\Jarek\Documents\Python" #potrzeba innej sciezki
+dir = r"C:\Users\Jarek\Documents\Python"
 lista = os.listdir(dir)
 number_files = len(lista)
 print number_files
   
 #zad5
 import os
-for root, dirs, files in os.walk(r'C:\Users\Jarek\Documents\Python'): #potrzeba innej sciezki 
+for root, dirs, files in os.walk(r'C:\Users\Jarek\Documents\Python'): 
     print root, dirs, files
   
 #zad6
 import os
-os.chdir(r'C:\Users\Jarek\Documents\Python')  #potrzeba innej sciezki 
+os.chdir(r'C:\Users\Jarek\Documents\Python')  
 old = ''
 new = ''
-for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):   #potrzeba innej sciezki 
+for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):   
     if file.endswith(".jpg"):
         old = os.path.join(os.getcwd()) + '\\' + file
         new = old.split('.')
@@ -44,7 +44,7 @@ for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):   #potrzeba innej sc
   
 # #zad7
 import os
-os.chdir(r'C:\Users\Jarek\Documents\Python')  #potrzeba innej sciezki 
+os.chdir(r'C:\Users\Jarek\Documents\Python')  
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
    
@@ -58,7 +58,7 @@ with open(infile) as fin, open(outfile, "w+") as fout:
   
 #zad8
 import os
-os.chdir(r'C:\Users\Jarek\Documents\Python')  #potrzeba innej sciezki 
+os.chdir(r'C:\Users\Jarek\Documents\Python')  
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
   
@@ -216,7 +216,7 @@ while True:
   
 #zad16
 import os
-os.chdir(r'C:\Users\Jarek\Documents\Python')  #potrzeba innej sciezki 
+os.chdir(r'C:\Users\Jarek\Documents\Python')  
 import xml.etree.ElementTree as xml
 students=[{'name':'Jarek','age':21,'marks':50},{'name':'Michal','age':22,'marks':60}]
 root = xml.Element("students")
@@ -246,7 +246,7 @@ with open("myfile_modified.xml", "wb") as fh:
   
 #zad16
 import os
-os.chdir(r'C:\Users\Mariusz\Documents\Python')  #potrzeba innej sciezki 
+os.chdir(r'C:\Users\Mariusz\Documents\Python') 
 import json
   
 movie_dict =  {"Title": "Star Wars",
