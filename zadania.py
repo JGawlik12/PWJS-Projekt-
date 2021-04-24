@@ -42,33 +42,34 @@ for file in os.listdir(r'C:\Users\Jarek\Documents\Python'):
         print(new[0]+".png")
         os.rename(old , new[0]+'.png')
   
-# #zad7
+#zad7
 import os
-os.chdir(r'C:\Users\Jarek\Documents\Python')  
+os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
-   
+
 delete = ["się", " i ", "nigdy", "dlaczego"]
-with open(infile) as fin, open(outfile, "w+") as fout:
-    for line in fin:
-        for word in delete:
-            line = line.replace(word, "")
-        fout.write(line)
-  
-  
+with open(infile, encoding="utf-8") as fin, open(outfile, "w+", encoding="utf-8") as fout:
+for line in fin:
+for word in delete:
+line = line.replace(word, "")
+fout.write(line)
+
+
 #zad8
 import os
-os.chdir(r'C:\Users\Jarek\Documents\Python')  
+os.chdir(r'C:\Users\Jarek\Documents\Python')
 infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
 outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
-  
+
 replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "dlaczego":"czemu"}
-  
-with open(infile) as fin, open(outfile, "w+") as fout:
-    for line in fin:
-        for key in replaceDict.keys():
-            line = line.replace(key, replaceDict[key])
-        fout.write(line)
+
+with open(infile, encoding="utf-8") as fin, open(outfile, "w+", encoding="utf-8") as fout:
+for line in fin:
+for key in replaceDict.keys():
+line = line.replace(key, replaceDict[key])
+fout.write(line)
+
   
   
 #zad9
@@ -246,7 +247,34 @@ with open("myfile_modified.xml", "wb") as fh:
   
 #zad16
 import os
-os.chdir(r'C:\Users\Mariusz\Documents\Python') 
+os.chdir(# #zad7
+import os
+os.chdir(r'C:\Users\Jarek\Documents\Python')
+infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
+outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
+
+delete = ["się", " i ", "nigdy", "dlaczego"]
+with open(infile, encoding="utf-8") as fin, open(outfile, "w+", encoding="utf-8") as fout:
+for line in fin:
+for word in delete:
+line = line.replace(word, "")
+fout.write(line)
+
+
+#zad8
+import os
+os.chdir(r'C:\Users\Jarek\Documents\Python')
+infile = os.path.join(os.getcwd()) + '\\' + "nowomowa.txt"
+outfile = os.path.join(os.getcwd()) + '\\' + "nowomowa_zmieniony.txt"
+
+replaceDict = {"się":"oraz", " i ":" i ", "nigdy":"prawie nigdy", "dlaczego":"czemu"}
+
+with open(infile, encoding="utf-8") as fin, open(outfile, "w+", encoding="utf-8") as fout:
+for line in fin:
+for key in replaceDict.keys():
+line = line.replace(key, replaceDict[key])
+fout.write(line)
+) 
 import json
   
 movie_dict =  {"Title": "Star Wars",
@@ -273,11 +301,11 @@ import threading
 import random
 import time
  
-#inheriting threading class in Thread module
+
 class Philosopher(threading.Thread):
-    running = True  #used to check if everyone is finished eating
+    running = True  
  
-# Since the subclass overrides the constructor, it must make sure to invoke the base class constructor (Thread.__init__()) before doing anything else to the thread.
+
     def __init__(self, index, forkOnLeft, forkOnRight):
         threading.Thread.__init__(self)
         self.index = index
@@ -286,25 +314,25 @@ class Philosopher(threading.Thread):
  
     def run(self):
         while(self.running):
-            # Philosopher is thinking (but really is sleeping).
+           
             time.sleep(30)
             print ('Philosopher %s is hungry.' % self.index)
             self.dine()
  
     def dine(self):
-        # if both the semaphores(forks) are free, then philosopher will eat
+       
         fork1, fork2 = self.forkOnLeft, self.forkOnRight
         while self.running:
-            fork1.acquire() # wait operation on left fork
+            fork1.acquire() 
             locked = fork2.acquire(False) 
-            if locked: break #if right fork is not available leave left fork
+            if locked: break 
             fork1.release()
             print ('Philosopher %s swaps forks.' % self.index)
             fork1, fork2 = fork2, fork1
         else:
             return
         self.dining()
-        #release both the fork after dining
+  
         fork2.release()
         fork1.release()
   
@@ -314,9 +342,9 @@ class Philosopher(threading.Thread):
         print ('Philosopher %s finishes eating and leaves to think.' % self.index)
  
 def main():
-    forks = [threading.Semaphore() for n in range(5)] #initialising array of semaphore i.e forks
+    forks = [threading.Semaphore() for n in range(5)] 
  
-    #here (i+1)%5 is used to get right and left forks circularly between 1-5
+  
     philosophers= [Philosopher(i, forks[i%5], forks[(i+1)%5])
             for i in range(5)]
  
